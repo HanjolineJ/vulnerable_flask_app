@@ -20,14 +20,14 @@ def login():
         password = request.form.get('password')
         
         # Comment out remove the admin_bypass section to fix the vulnerability
-        Admin bypass section for reference
-        if username == 'admin_bypass':
+        #Admin bypass section for reference
+        if username == 'admin_bypass': # Insecure
             session['username'] = 'admin'
             return redirect(url_for('dashboard'))
         # Debug print statements
         print(f"Attempting login with username: {username} and password: {password}")
         
-        # Regular authentication process
+        # Regular authentication process # Secure
         #if username in users and users[username]['password'] == password:
             #session['username'] = username
             #print(f"Login successful for user: {username}")
